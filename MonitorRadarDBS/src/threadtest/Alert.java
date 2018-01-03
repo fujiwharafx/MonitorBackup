@@ -38,7 +38,7 @@ public class Alert {
         this.threadCreator = new ThreadCreator();
         threadCreator.myThread.start();
         
-        new UserInterface("DBS Satellite", ("monitoring...   " + dataType)).run();
+        new UserInterface("DBS Radar", ("monitoring...   " + dataType)).run();
         
         while(threadCreator.myThread.isAlive()){
             this.fileName = reader.read(this.event);
