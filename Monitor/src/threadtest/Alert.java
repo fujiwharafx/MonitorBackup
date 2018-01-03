@@ -42,7 +42,7 @@ public class Alert {
         
         while(threadCreator.myThread.isAlive()){
             this.fileName = reader.read(this.event);
-            Thread.sleep(5000);
+            Thread.sleep(5400000);
             if(this.fileName.matches(reader.read(event))){
                 long millis = System.currentTimeMillis() % 1000;
                 this.dfA = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
