@@ -31,7 +31,7 @@ public class Alert {
         this.log = log;
         this.reader = new FileReader();
         this.fileName = "";
-        this.drive = new File("K:\\VizData\\DBS_Images\\prism_sat_IR");
+        this.drive = new File("\\\\pttvfs1\\WxData_Proxy\\Image\\FOD Hourly CONUS 4km\\Temperature");
         
         
         
@@ -42,13 +42,13 @@ public class Alert {
         this.threadCreator = new ThreadCreator();
         threadCreator.myThread.start();
         
-        new UserInterface("DBS Satellite", ("monitoring...   " + dataType)).run();
+        new UserInterface("Cloud Hourly Temp", ("monitoring...   " + dataType)).run();
         
         
         
         while(threadCreator.myThread.isAlive()){
             this.fileName = reader.read(this.event);
-            Thread.sleep(2700000);
+            Thread.sleep(1500000);
             if(this.fileName.matches(reader.read(event)) && this.drive.exists()){
                 long millis = System.currentTimeMillis() % 1000;
                 this.dfA = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
@@ -60,7 +60,7 @@ public class Alert {
                 //this.email.send();
                 
                 //SEND TEXT
-                //this.textSMS = new SendText("DBS SATELLITE");
+                //this.textSMS = new SendText("DBS RADAR");
                 //this.textSMS.send();
                 
                 new UserInterfaceHide("OUTAGE", dfA.format(date)).run();
