@@ -40,7 +40,7 @@ public class SendText {
             message.setFrom(new InternetAddress("wxdatamonitor@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse("4043089356@vtext.com"));
-            message.setSubject("MONITOR: WXDATA OUTAGE");
+            message.setSubject("OUTAGE");
             message.setText(this.emailBody);
             Transport.send(message);
             System.out.println("Sent message successfully....");
