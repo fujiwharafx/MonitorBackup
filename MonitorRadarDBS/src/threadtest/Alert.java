@@ -48,7 +48,7 @@ public class Alert {
         
         while(threadCreator.myThread.isAlive()){
             this.fileName = reader.read(this.event);
-            Thread.sleep(1500000);
+            Thread.sleep(2100000);
             if(this.fileName.matches(reader.read(event)) && this.drive.exists()){
                 long millis = System.currentTimeMillis() % 1000;
                 this.dfA = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
@@ -56,12 +56,12 @@ public class Alert {
                 this.date = new Date();
                 
                 //SEND EMAIL
-                //this.email = new SendEmail("REPORTED-----" + date + "\nDATA THAT IS MISSING-----" + dataType + "\nDATA LAST UPDATED AT----- " + dfB.format(threadCreator.getDate()) + "\n\n\n" + millis);
-                //this.email.send();
+                this.email = new SendEmail("REPORTED-----" + date + "\nDATA THAT IS MISSING-----" + dataType + "\nDATA LAST UPDATED AT----- " + dfB.format(threadCreator.getDate()) + "\n\n\n" + millis);
+                this.email.send();
                 
                 //SEND TEXT
-                //this.textSMS = new SendText("DBS RADAR");
-                //this.textSMS.send();
+                this.textSMS = new SendText("DBS RADAR");
+                this.textSMS.send();
                 
                 new UserInterfaceHide("OUTAGE", dfA.format(date)).run();
                 this.logFile = new AppendLogFile(log, (dfA.format(date)) + "---OUTAGE");

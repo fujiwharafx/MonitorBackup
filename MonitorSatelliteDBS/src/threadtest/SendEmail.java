@@ -24,7 +24,8 @@ public class SendEmail {
     
     public SendEmail(String emailBody) throws AddressException{
         this.recipients = new Address[] {InternetAddress.parse("andrew.maloof@weathergroup.com")[0],
-                                        InternetAddress.parse("doug.dickson@weathergroup.com")[0]};
+                                         InternetAddress.parse("doug.dickson@weathergroup.com")[0],
+                                         InternetAddress.parse("gary.hood@weathergroup.com")[0]};
         this.emailBody = emailBody;
         this.props = new Properties();
         this.props.put("mail.smtp.auth", "true");
