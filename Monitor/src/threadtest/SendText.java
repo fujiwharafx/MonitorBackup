@@ -11,8 +11,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SendText {
-    final String username = "wxdatamonitor@gmail.com";
-    final String password = "wxdata101";
+    final String username = "encrypt";
+    final String password = "encrypt";
     
     private String emailBody;
     private Properties props;
@@ -39,7 +39,7 @@ public class SendText {
             MimeMessage message = new MimeMessage(this.session);
             message.setFrom(new InternetAddress("wxdatamonitor@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("4043089356@vtext.com"));
+                    InternetAddress.parse("encrypt@vtext.com"));
             message.setSubject("MONITOR: WXDATA OUTAGE");
             message.setText(this.emailBody);
             Transport.send(message);
