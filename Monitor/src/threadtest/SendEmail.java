@@ -13,8 +13,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SendEmail {
-    final String username = "wxdatamonitor@gmail.com";
-    final String password = "wxdata101";
+    final String username = "";
+    final String password = "";
     
     private String emailBody;
     private Properties props;
